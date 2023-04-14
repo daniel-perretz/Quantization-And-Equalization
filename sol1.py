@@ -121,7 +121,6 @@ def quantize(im_orig, n_quant, n_iter):
                 quantization procedure
     """
 
-    #check whether it rgb or grayscale
     orig = im_orig
     if(im_orig.ndim == 3):
         yiq_img = rgb2yiq(im_orig)
@@ -190,14 +189,3 @@ def quantize(im_orig, n_quant, n_iter):
         return [new_img,error_array]
 
     return [new_img,error_array.astype(int)]
-
-
-def quantize_rgb(im_orig, n_quant):  # Bonus - optional
-    """
-    Performs optimal quantization of a given greyscale or RGB image
-    :param im_orig: Input RGB image of type float64 in the range [0,1]
-    :param n_quant: Number of intensities im_quant image will have
-    :return:  im_quant - the quantized output image
-    """
-    pass
-
